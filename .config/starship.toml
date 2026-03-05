@@ -1,0 +1,49 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch \
+$cmd_duration\
+$time\
+$line_break\
+$character"""
+
+palette = "theau"
+
+[palettes.theau]
+sage = "#a6e3a1"
+gold = "#ffc300"
+periwinkle = "#89b4fa"
+
+[directory]
+style = "bold periwinkle"
+
+[character]
+success_symbol = "[➜](green)"
+error_symbol = "[➜](red)"
+vimcmd_symbol = "[❮](green)"
+
+
+[time]
+disabled=false
+format = "at [$time]($style) "
+style = "gold"
+time_format = "%a %b %e - %H:%M:%S%.3f"
+
+[git_branch]
+format = "[$branch]($style)"
+style = "italic sage"
+
+[cmd_duration]
+format = "took [$duration]($style) "
+style = "gold"
+min_time=50
+show_milliseconds = true
+
+[python]
+format = "[$virtualenv]($style) "
+style = "bright-black"
+detect_extensions = []
+detect_files = []
